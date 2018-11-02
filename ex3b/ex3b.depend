@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1541111962 source:/home/stephen/Desktop/1451/ex3b/numbers.cpp
+	<iomanip>
+	<iostream>
+

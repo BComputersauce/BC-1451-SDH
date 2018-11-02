@@ -1,0 +1,64 @@
+// Exercise2-2.
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const double AIRSPEED = 1100;															// Define global constants Air, Water, Steel
+const double WATSPEED = 4900;
+const double STLSPEED = 16400;
+
+double processing(double speed)															//function performing main calculations
+{
+	double distance, result;															//Define variables to be used
+
+	cout << "Please enter a distance in feet: ";										//Request input
+	cin >> distance;																	//Set user input to distance variable
+
+		if (distance <= 0)																//If statement to catch negative values or 0
+		{
+			cout << "You entered an invalid number. Exiting program";					//Output explining termination
+			return 0;
+		}
+		else																			//else statement for valid inputs
+		{
+			result = distance / speed;													//Arithmetic operation
+			cout << fixed << setprecision(4) << result;									//Output result formatted to 4DP
+			return 0;
+		}
+}
+
+int main()
+{
+	char menuSelect;
+
+	cout << "Welcome to Time Calculator." << endl;										//Intro to program
+	cout << "This calculator will calculate the time";
+	cout << "a wave takes to travel through a material" << endl;						//Options to select + request input with formatting
+	cout << "For Air enter A, for water enter W, for steel enter S." << endl;
+	cout << "What is your selection?: ";
+	cin >> menuSelect;																	//User menu input
+
+	switch (menuSelect)																	//Switch statement for constant selection
+	{
+	case 'A':																			//Cases for Air
+	case 'a':
+		processing(AIRSPEED);															//Call processing function with AIRSPEED constant
+		break;
+
+	case 'W':																			//Cases for Water
+	case 'w':
+		processing(WATSPEED);															//Call processing function with WATSPEED constant
+		break;
+
+	case 'S':																			//Cases for Steel
+	case 's':
+		processing(STLSPEED);															//Call processing function with STLSPEED constant
+		break;
+
+	default:
+		cout << "Incorrect Selection, exiting program." << endl;						//Statement to catch invalid entires
+	}
+
+    return 0;
+}

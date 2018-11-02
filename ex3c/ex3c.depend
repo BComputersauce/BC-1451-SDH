@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1541118692 source:/home/stephen/Desktop/1451/ex3c/pennies.cpp
+	<iostream>
+	<iomanip>
+	<string>
+
